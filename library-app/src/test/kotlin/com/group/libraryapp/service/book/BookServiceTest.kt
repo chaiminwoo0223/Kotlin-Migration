@@ -31,7 +31,7 @@ class BookServiceTest @Autowired constructor(
     }
 
     @Test
-    @DisplayName("책 등록이 정상 동작")
+    @DisplayName("책 등록이 정상 동작함")
     fun saveBookTest() {
         // given
         val request = BookRequest("이상한 나라의 앨리스")
@@ -47,7 +47,7 @@ class BookServiceTest @Autowired constructor(
 
 
     @Test
-    @DisplayName("책 대출이 정상 동작")
+    @DisplayName("책 대출이 정상 동작함")
     fun loanBookTest() {
         // given
         bookRepository.save(Book("이상한 나라의 앨리스"))
@@ -66,7 +66,7 @@ class BookServiceTest @Autowired constructor(
     }
 
     @Test
-    @DisplayName("책이 진작 대출되어 있다면, 신규 대출이 실패")
+    @DisplayName("책이 진작 대출되어 있다면, 신규 대출이 실패함")
     fun loanBookFailTest() {
         // given
         bookRepository.save(Book("이상한 나라의 앨리스"))
@@ -82,7 +82,7 @@ class BookServiceTest @Autowired constructor(
     }
 
     @Test
-    @DisplayName("책 반납이 정상 동작")
+    @DisplayName("책 반납이 정상 동작함")
     fun returnBookTest() {
         // given
         val savedUser = userRepository.save(User("최민우", null))
