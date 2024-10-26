@@ -12,7 +12,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 
 @SpringBootTest
-class JavaUserServiceTest @Autowired constructor(
+class UserServiceTest @Autowired constructor(
     private val userRepository: UserRepository,
     private val userService: UserService
 ) {
