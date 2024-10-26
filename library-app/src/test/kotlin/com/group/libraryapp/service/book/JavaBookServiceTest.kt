@@ -18,7 +18,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.assertThrows
 
 @SpringBootTest
-class BookServiceTest @Autowired constructor(
+class JavaBookServiceTest @Autowired constructor(
     private val bookService: BookService,
     private val bookRepository: BookRepository,
     private val userRepository: UserRepository,

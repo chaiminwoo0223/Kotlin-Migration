@@ -12,7 +12,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 
 @SpringBootTest
-class UserServiceTest @Autowired constructor(
+class JavaUserServiceTest @Autowired constructor(
     private val userRepository: UserRepository,
     private val userService: UserService
 ) {
@@ -41,7 +41,10 @@ class UserServiceTest @Autowired constructor(
     @DisplayName("유저 조회가 정상 동작함")
     fun getUserTest() {
         // given
-        userRepository.saveAll(listOf(User("A", 20), User("B", null)))
+        userRepository.saveAll(listOf(
+            User("A", 20),
+            User("B", null)
+        ))
 
         // when
         val results = userService.getUsers()
@@ -57,7 +60,7 @@ class UserServiceTest @Autowired constructor(
     fun updateUserNameTest() {
         // given
         val savedUser = userRepository.save(User("A", null))
-        val request = UserUpdateRequest(savedUser.id, "B")
+        val request = UserUpdateRequest(savedUser.id!!, "B")
 
         // when
         userService.updateUserName(request)
