@@ -37,7 +37,7 @@ class UserController(
         userService.deleteUser(name)
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/loan")
     fun getUserLoanHistories(): List<UserLoanHistoryResponse> {
         return userService.getUserLoanHistories()
     }
